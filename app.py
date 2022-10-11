@@ -3,9 +3,12 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/hello")
 def hello_world():
     return "<p>Hello, World!</p>"
+
+url_for('static', filename='index.html')
 
 @app.route('/api/upload', methods=['GET', 'POST'])
 def upload_file():
